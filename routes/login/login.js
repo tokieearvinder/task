@@ -26,9 +26,7 @@ router.post('/login', function (req, res) {
     if (user) {
       console.log('userdata', user);
       req.session.userId = user.id
-      return res.redirect('/home1',{
-        'userDATA':user
-      });
+      return res.redirect('/home1');
     }
   }
   res.redirect('/login')

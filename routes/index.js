@@ -27,9 +27,15 @@ router.post('/home', function (req, res) {
       console.log('Error', err)
     } else {
       console.log('address response', response[0].formattedAddress);
+      sendData(response[0].formattedAddress)
     }
   });
-  res.send('success')
+  
+  function sendData(response){
+    console.log('response data for',response)
+    res.send(200,response)
+
+  }
 })
 
 module.exports = router;
